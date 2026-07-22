@@ -34,15 +34,16 @@ function App() {
 
         {/* Redirect root */}
 
-        <Route
-          path="/"
-          element={<Navigate to="/dashboard" replace />}
-        />
-
-        {/* Login */}
+         {/* Login */}
         <Route
           path="/login"
           element={<Login />}
+        />
+
+
+        <Route
+          path="/"
+          element={<Navigate to="/login" replace />}
         />
 
         {/* Protected Layout */}
@@ -80,6 +81,12 @@ function App() {
   element={<AttendanceReport />}
 />
 
+<Route
+           path="/fees"
+           element={<FeeCollection />}
+          />
+
+        </Route>
 
           <Route
             path="/reports"
@@ -91,12 +98,7 @@ function App() {
             element={<Settings />}
           />
 
-          <Route
-           path="/fees"
-           element={<FeeCollection />}
-          />
-
-        </Route>
+          
 
           <Route
   path="/students/add"

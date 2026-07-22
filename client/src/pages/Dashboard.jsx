@@ -3,6 +3,7 @@ import DashboardCard from "../components/DashboardCard";
 import { getDashboardStats } from "../services/dashboardService";
 import AttendanceSummary from "../components/AttendanceSummary";
 
+
 function Dashboard() {
 
 const [stats, setStats] = useState({

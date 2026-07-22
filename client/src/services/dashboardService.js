@@ -5,4 +5,4 @@ const dashboardAPI = axios.create({
   baseURL: `${API_URL}/dashboard`,
 });
 
-export const getDashboardStats = () => dashboardAPIAPI.get("/");
+export const getDashboardStats = () => dashboardAPI.get("/");
