@@ -1,0 +1,46 @@
+body {
+  background: #f4f6f9;
+}
+
+.app-container {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background: #212529;
+  color: white;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 15px 20px;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar li:hover {
+  background: #343a40;
+}
+
+.content {
+  flex: 1;
+  padding: 25px;
+}
+
+.dashboard-card {
+  border: none;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+}
+
+.icon-box {
+  font-size: 40px;
+}
