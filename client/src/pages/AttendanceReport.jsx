@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import API_URL from "../config/api";
 
 function AttendanceReport() {
 
@@ -15,7 +16,7 @@ function AttendanceReport() {
     try {
 
       const res = await axios.get(
-        `${API}/students`
+        `${API_URL}/students`
       );
 
       setStudents(res.data.data);
@@ -37,7 +38,7 @@ function AttendanceReport() {
     try {
 
       const res = await axios.get(
-        `${API}/attendance/student/${id}/report`
+        `${API_URL}/attendance/student/${id}/report`
       );
 
       setReport(res.data.data);

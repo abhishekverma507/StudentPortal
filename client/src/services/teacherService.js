@@ -1,19 +1,19 @@
 import axios from "axios";
-import API from "../config/api";
+import API_URL from "../config/api";
 
-const API_URL = `${API}/teachers`;
+const TEACHER_URL = `${API_URL}/teachers`;
 
 export const getTeachers = () =>
-  axios.get(API_URL);
+  axios.get(TEACHER_URL);
 
 export const getTeacherById = (id) =>
-  axios.get(`${API_URL}/${id}`);
+  axios.get(`${TEACHER_URL}/${id}`);
 
 export const addTeacher = (teacher) =>
-  axios.post(API_URL, teacher);
+  axios.post(TEACHER_URL, teacher);
 
 export const updateTeacher = (id, teacher) =>
-  axios.put(`${API_URL}/${id}`, teacher);
+  axios.put(`${TEACHER_URL}/${id}`, teacher);
 
 export const deleteTeacher = (id) =>
-  axios.delete(`${API_URL}/${id}`);
+  axios.delete(`${TEACHER_URL}/${id}`);

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import API_URL from "../config/api";
 
 
 function AttendanceSummary(){
@@ -17,7 +18,7 @@ function AttendanceSummary(){
 useEffect(()=>{
 
 axios
-.get(`${API}/attendance/dashboard`)
+.get(`${API_URL}/attendance/dashboard`)
 
 .then((response)=>{
 

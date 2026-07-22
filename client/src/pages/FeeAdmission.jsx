@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import FeeForm from "../components/FeeForm";
 import FeeHistory from "../components/FeeHistory";
 import { useFees } from "../context/FeeContext";
+import API_URL from "../config/api";
 
 function FeeAdmission() {
 
@@ -29,7 +30,7 @@ function FeeAdmission() {
     try {
 
       const response = await axios.get(
-        `${API}/students/${studentId}`
+        `${API_URL}/students/${studentId}`
       );
 
       setStudent(response.data.data);

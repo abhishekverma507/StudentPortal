@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import API from "../config/api";
+import API_URL from "../config/api";
+
 
 
 function AttendanceDashboard(){
@@ -30,7 +31,7 @@ async function loadAttendanceSummary(){
 try{
 
 
-const response = await axios.get(`${API}/attendance/dashboard`);
+const response = await axios.get(`${API_URL}/attendance/dashboard`);
 
 const data = response.data.data;
 

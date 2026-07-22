@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "../styles/print.css";
+import API_URL from "../config/api";
 
 function PrintAllStudents() {
 
@@ -15,7 +16,7 @@ function PrintAllStudents() {
     async function loadStudents() {
 
         const response = await axios.get(
-            `${API}/students`
+            `${API_URL}/students`
         );
 
         setStudents(response.data.data);

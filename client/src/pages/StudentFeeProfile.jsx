@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import API_URL from "../config/api";
 
 function StudentFeeProfile() {
 
@@ -25,7 +26,7 @@ function StudentFeeProfile() {
     async function loadStudent() {
 
         const res = await axios.get(
-            `${API}/students/${id}`
+            `${API_URL}/students/${id}`
         );
 
         setStudent(res.data.data);
@@ -34,7 +35,7 @@ function StudentFeeProfile() {
     async function loadFees() {
 
         const res = await axios.get(
-            `${API}/fees`
+            `${API_URL}/fees`
         );
 
         const studentFees = res.data.data.filter(

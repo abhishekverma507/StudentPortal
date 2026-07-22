@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import API from "../config/api";
+import API_URL from "../config/api";
 
 function AttendanceHistory(){
 
@@ -45,7 +45,7 @@ async function loadAttendance(){
 try{
 
 const response = await axios.get(
-`${API}/attendance`
+`${API_URL}/attendance`
 );
 
 
@@ -69,7 +69,7 @@ try{
 
 await axios.put(
 
-`${API}/attendance/${editingRecord._id}`,
+`${API_URL}/attendance/${editingRecord._id}`,
 
 {
 
@@ -150,7 +150,7 @@ try{
 
 
 await axios.delete(
-`${API}/attendance/${id}`
+`${API_URL}/attendance/${id}`
 );
 
 

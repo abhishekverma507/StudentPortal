@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import API from "../config/api";
+import API_URL from "../config/api";
 
 function AttendanceForm({ onSave }) {
 
@@ -20,7 +20,7 @@ function AttendanceForm({ onSave }) {
 
     try {
 
-      const response = await axios.get(`${API}/students`);
+      const response = await axios.get(`${API_URL}/students`);
 
       const studentList = response.data.data;
 

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import FeeHistory from "../components/FeeHistory";  
 import { Link } from "react-router-dom";   
+import API_URL from "../config/api";
 
 function FeeCollection() {
 
@@ -34,7 +35,7 @@ function FeeCollection() {
   async function loadStudents() {
     try {
       const response = await axios.get(
-        `${API}/students`
+        `${API_URL}/students`
       );
 
       setStudents(response.data.data);
@@ -49,7 +50,7 @@ async function loadFees() {
     try {
 
         const response = await axios.get(
-            `${API}/fees`
+            `${API_URL}/fees`
         );
 
         setFees(response.data.data);
@@ -117,7 +118,7 @@ async function loadFees() {
     try {
 
       await axios.post(
-  `${API}/fees`,
+  `${API_URL}/fees`,
   formData
 );
 

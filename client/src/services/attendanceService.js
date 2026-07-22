@@ -1,21 +1,20 @@
 import axios from "axios";
+import API_URL from "../config/api";
 
-const API = axios.create({
-  baseURL: "http://localhost:5000/api/attendance",
+const attendanceAPI = axios.create({
+  baseURL: `${API_URL}/attendance`,
 });
 
-// Attendance APIs
-export const getAttendance = () => API.get("/");
+export const getAttendance = () => attendanceAPI.get("/");
 
 export const addAttendance = (data) =>
-  API.post("/", data);
+  attendanceAPI.post("/", data);
 
 export const saveAttendance = (data) =>
-  API.post("/bulk", data);
+  attendanceAPI.post("/bulk", data);
 
 export const updateAttendance = (id, data) =>
-  API.put(`/${id}`, data);
+  attendanceAPI.put(`/${id}`, data);
 
 export const deleteAttendance = (id) =>
-  API.delete(`/${id}`);
-
+  attendanceAPI.delete(`/${id}`);
