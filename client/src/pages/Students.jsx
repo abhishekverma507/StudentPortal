@@ -235,7 +235,7 @@ const handlePrint = (student) => {
   </div>
 
   <Link
-    to="/students/new"
+    to="/students/add"
     className="btn btn-primary px-4"
   >
     <i className="bi bi-person-plus-fill me-2"></i>

@@ -74,6 +74,8 @@ function App() {
             element={<Attendance />}
           />
 
+          
+
           <Route path="/attendance-history" element={<AttendanceHistory />} />
 
           <Route
@@ -98,17 +100,22 @@ function App() {
             element={<Settings />}
           />
 
-          
-
           <Route
   path="/students/add"
   element={<StudentAdmission />}
         />
+
           <Route
   path="/students/edit/:id"
   element={<StudentAdmission />}
         />
+
         
+<Route
+  path="/students/new"
+  element={<StudentAdmission />}
+/>
+
         <Route
   path="/students/print/:id"
   element={<PrintStudent />}
@@ -153,7 +160,7 @@ element={<FeeReceiptPage />}
 <Route
     path="/students/print-all"
     element={<PrintAllStudents />}
-/>
+/>      
 
       </Routes>
 
