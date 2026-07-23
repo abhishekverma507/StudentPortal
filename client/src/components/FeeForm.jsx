@@ -94,9 +94,6 @@ function FeeForm({ onAddFee, editingFee, student, Students }) {
   };
 
 
-
-
-
   // Calculate final amount
 
   useEffect(()=>{
@@ -124,11 +121,6 @@ function FeeForm({ onAddFee, editingFee, student, Students }) {
     formData.totalAmount,
     formData.discount
   ]);
-
-
-
-
-
 
 
   const handleSubmit=(e)=>{
@@ -232,7 +224,7 @@ return (
       setFormData((prev) => ({
         ...prev,
 
-        studentId: Student._id,
+        studentId: selectedStudent._id,
 
         studentName: `${selectedStudent.firstName} ${selectedStudent.lastName}`,
 
@@ -258,7 +250,7 @@ return (
 
       <option
         key={student._id}
-        value={formData.studentId || ""}
+        value={student._id}
       >
         {student.firstName} {student.lastName}
         {" - "}
@@ -337,9 +329,6 @@ onChange={handleChange}
 
 </div>
 
-
-
-
 <div className="col-md-4 mb-3">
 
 <label>
@@ -361,8 +350,6 @@ onChange={handleChange}
 </div>
 
 
-
-
 <div className="col-md-4 mb-3">
 
 <label>
@@ -382,9 +369,6 @@ onChange={handleChange}
 />
 
 </div>
-
-
-
 
 
 <div className="col-md-4 mb-3">
@@ -417,10 +401,6 @@ onChange={handleChange}
 
 </div>
 
-
-
-
-
 <div className="col-md-4 mb-3">
 
 <label>
@@ -440,10 +420,6 @@ onChange={handleChange}
 />
 
 </div>
-
-
-
-
 
 <div className="col-md-4 mb-3">
 
@@ -473,11 +449,6 @@ onChange={handleChange}
 </select>
 
 </div>
-
-
-
-
-
 
 <div className="col-md-4 mb-3">
 
@@ -548,10 +519,6 @@ readOnly
 />
 
 </div>
-
-
-
-
 
 
 <div className="col-md-4 mb-3">
