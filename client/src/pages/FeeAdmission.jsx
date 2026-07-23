@@ -185,6 +185,7 @@ useEffect(() => {
 
       <FeeForm
         student={student}
+        students={students}
         editingFee={editingFee}
         onAddFee={handleAddFee}
       />

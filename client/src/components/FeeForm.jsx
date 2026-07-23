@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 
-function FeeForm({ onAddFee, editingFee, student }) {
+function FeeForm({ onAddFee, editingFee, student, Students }) {
 
 
   const [formData, setFormData] = useState({
@@ -214,24 +214,62 @@ return (
 
 <div className="col-md-4 mb-3">
 
-<label>
-Student Name
-</label>
+  <label>
+    Student Name <span className="text-danger">*</span>
+  </label>
 
-<input
+  <select
+    className="form-select"
+    value={formData.studentId || ""}
+    onChange={(e) => {
 
-className="form-control"
+      const selectedStudent = students.find(
+        (s) => s._id === e.target.value
+      );
 
-name="studentName"
+      if (!selectedStudent) return;
 
-value={formData.studentName}
+      setFormData((prev) => ({
+        ...prev,
 
-onChange={handleChange}
+        studentId: Student._id,
 
-/>
+        studentName: `${selectedStudent.firstName} ${selectedStudent.lastName}`,
+
+        admissionNo: selectedStudent.admissionNumber,
+
+        className: selectedStudent.className,
+
+        section: selectedStudent.section,
+
+        fatherName: selectedStudent.fatherName,
+
+        mobile: selectedStudent.mobile,
+      }));
+
+    }}
+  >
+
+    <option value="">
+      Select Student
+    </option>
+
+    {students.map((student) => (
+
+      <option
+        key={student._id}
+        value={formData.studentId || ""}
+      >
+        {student.firstName} {student.lastName}
+        {" - "}
+        {student.admissionNumber}
+      </option>
+
+    ))}
+
+  </select>
 
 </div>
-
 
 
 <div className="col-md-4 mb-3">
