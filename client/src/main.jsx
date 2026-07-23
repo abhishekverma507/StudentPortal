@@ -10,7 +10,7 @@ import { StudentProvider } from "./context/StudentContext";
 import { FeeProvider } from "./context/FeeContext";
 
 import "react-toastify/dist/ReactToastify.css";
-
+import "./responsive.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
