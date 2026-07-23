@@ -1,68 +1,103 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-function Sidebar() {
+function Sidebar({ sidebarOpen, setSidebarOpen }) {
+
+  const closeSidebar = () => {
+    setSidebarOpen(false);
+  };
+
+
   return (
-    <div className="sidebar bg-dark text-white">
+    <aside className={`sidebar ${sidebarOpen ? "active" : ""}`}>
 
-      <h4 className="text-center py-3 border-bottom">
-        School ERP
-      </h4>
+      {/* Mobile Close Button */}
+      <div className="sidebar-header d-lg-none">
+
+        <button
+          className="btn btn-light"
+          onClick={closeSidebar}
+        >
+          ✕
+        </button>
+
+      </div>
+
 
       <ul className="nav flex-column">
 
-        <li className="nav-item">
-          <Link className="nav-link text-white" to="/dashboard">
-            Dashboard
-          </Link>
+        <li>
+          <NavLink 
+            to="/dashboard"
+            onClick={closeSidebar}
+          >
+            🏠 Dashboard
+          </NavLink>
         </li>
 
-        <li className="nav-item">
-          <Link className="nav-link text-white" to="/students">
-            Students
-          </Link>
+
+        <li>
+          <NavLink 
+            to="/students"
+            onClick={closeSidebar}
+          >
+            👨‍🎓 Students
+          </NavLink>
         </li>
 
-        <li className="nav-item">
-          <Link className="nav-link text-white" to="/teachers">
-            Teachers
-          </Link>
+
+        <li>
+          <NavLink 
+            to="/teachers"
+            onClick={closeSidebar}
+          >
+            👨‍🏫 Teachers
+          </NavLink>
         </li>
 
-        <li className="nav-item">
-          <Link className="nav-link text-white" to="/attendance">
-            Attendance
-          </Link>
+
+        <li>
+          <NavLink 
+            to="/attendance"
+            onClick={closeSidebar}
+          >
+            📅 Attendance
+          </NavLink>
         </li>
 
-        <li className="nav-item">
-          <Link className="nav-link text-white" to="/attendance-report">
-            <i className="bi bi-bar-chart-fill me-2"></i>
-            Attendance Report
-          </Link>
+
+        <li>
+          <NavLink 
+            to="/fees"
+            onClick={closeSidebar}
+          >
+            💰 Fees
+          </NavLink>
         </li>
 
-        <li className="nav-item">
-          <Link className="nav-link text-white" to="/fees">
-            <i className="bi bi-cash-coin me-2"></i>
-            Fee Collection
-          </Link>
+
+        <li>
+          <NavLink 
+            to="/reports"
+            onClick={closeSidebar}
+          >
+            📊 Reports
+          </NavLink>
         </li>
 
-        <li className="nav-item">
-          <Link className="nav-link text-white" to="/reports">
-            Reports
-          </Link>
+
+        <li>
+          <NavLink 
+            to="/settings"
+            onClick={closeSidebar}
+          >
+            ⚙️ Settings
+          </NavLink>
         </li>
 
-        <li className="nav-item">
-          <Link className="nav-link text-white" to="/settings">
-            Settings
-          </Link>
-        </li>
 
       </ul>
 
-    </div>
+    </aside>
   );
 }
 

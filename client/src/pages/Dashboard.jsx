@@ -39,11 +39,11 @@ async function fetchDashboard() {
 }
 
   return (
-    <div>
+      <div className="container-fluid">
 
-      <div className="d-flex justify-content-between align-items-center mb-4">
+      <div className="row align-items-center mb-4">
 
-  <div>
+  <div className="col-12 col-md-8">
 
     <h2 className="fw-bold">
       👋 Welcome back, Admin
@@ -55,7 +55,7 @@ async function fetchDashboard() {
 
   </div>
 
-  <div className="text-end">
+  <div className="col-12 col-md-4 text-md-end mt-2 mt-md-0">
 
     <h5 className="mb-0">
       {new Date().toLocaleDateString()}

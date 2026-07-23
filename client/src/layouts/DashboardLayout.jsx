@@ -9,21 +9,23 @@ function DashboardLayout() {
 
   return (
     <>
-      <Navbar onMenuClick={() => setSidebarOpen(true)} />
+      <Navbar
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+      />
 
       <div className="app-container">
 
-        <div
-          className={`sidebar ${sidebarOpen ? "show" : ""}`}
-        >
-          <Sidebar />
-        </div>
+        <Sidebar
+          sidebarOpen={sidebarOpen}
+          setSidebarOpen={setSidebarOpen}
+        />
 
         {sidebarOpen && (
           <div
             className="sidebar-overlay"
             onClick={() => setSidebarOpen(false)}
-          ></div>
+          />
         )}
 
         <div className="content">
