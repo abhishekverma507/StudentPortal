@@ -17,9 +17,10 @@ function Navbar({ onMenuClick }) {
   }
 
   return (
-    <nav className="navbar navbar-dark bg-primary px-3">
+<nav className="navbar navbar-dark bg-primary px-3 flex-wrap">
 
-      <div className="d-flex align-items-center">
+
+      <div className="d-flex align-items-center flex-wrap gap-2">
 
         {/* Mobile Menu Button */}
         <button

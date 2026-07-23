@@ -79,3 +79,26 @@
   }
 
 }
+
+
+/* ===========================
+   Mobile Responsive
+=========================== */
+
+@media (max-width: 768px) {
+
+  .sidebar{
+    display:none;
+  }
+
+  .content{
+    margin-left:0 !important;
+    width:100% !important;
+    padding:15px;
+  }
+
+  .app-container{
+    display:block;
+  }
+
+}
