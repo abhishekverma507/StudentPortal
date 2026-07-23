@@ -49,7 +49,9 @@ motherName: {
 
 gender: {
     type: String,
+    required: [true, "Gender is required"],
     enum: ["Male", "Female", "Other"],
+    trim: true,
 },
 
 address: {
