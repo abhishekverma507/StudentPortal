@@ -126,6 +126,11 @@ function App() {
     element={<FeeAdmission />}
 />
 
+<Route
+  path="/fees/new"
+  element={<FeeAdmission />}
+/>
+
 
 <Route path="/fees/edit/:id" element={<FeeAdmission />} />
 
