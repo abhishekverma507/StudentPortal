@@ -165,7 +165,7 @@ Manage fee payments and receipts.
 </div>
 
 <Link
-  to="/fees/new"
+  to="/fee-admission"
   className="btn btn-primary px-4"
 >
   <i className="bi bi-plus-circle me-2"></i>
