@@ -82,6 +82,10 @@ const [errors, setErrors] = useState({});
     newErrors.className = "Class is required";
   }
 
+  if (!formData.gender) {
+  newErrors.gender = "Gender is required";
+}
+
   if (!formData.mobile.trim()) {
     newErrors.mobile = "Mobile Number is required";
   }
@@ -232,20 +236,30 @@ const [errors, setErrors] = useState({});
               />
             </div>
 
-            <div className="col-md-4 mb-3">
-              <label className="form-label">Gender</label>
-              <select
-                className="form-select"
-                name="gender"
-                value={formData.gender}
-                onChange={handleChange}
-              >
-                <option value="">Select</option>
-                <option>Male</option>
-                <option>Female</option>
-                <option>Other</option>
-              </select>
-            </div>
+           <div className="col-md-4 mb-3">
+  <label className="form-label">
+    Gender <span className="text-danger">*</span>
+  </label>
+
+  <select
+    className={`form-select ${
+      errors.gender ? "is-invalid" : ""
+    }`}
+    name="gender"
+    value={formData.gender}
+    onChange={handleChange}
+  >
+    <option value="">Select Gender</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Other">Other</option>
+  </select>
+
+  <div className="invalid-feedback">
+    {errors.gender}
+  </div>
+</div>
+
 
                 <div className="col-md-4 mb-3">
   <label className="form-label">Status</label>
