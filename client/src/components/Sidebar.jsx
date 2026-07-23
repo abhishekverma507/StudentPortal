@@ -74,32 +74,6 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
   </NavLink>
 </li>
 
-<li>
-  <NavLink 
-    to="/fee-admission"
-    onClick={closeSidebar}
-  >
-    📝 Fee Admission
-  </NavLink>
-</li>
-
-<li>
-  <NavLink 
-    to="/fee-history"
-    onClick={closeSidebar}
-  >
-    📜 Fee History
-  </NavLink>
-</li>
-
-<li>
-  <NavLink 
-    to="/fee-receipt"
-    onClick={closeSidebar}
-  >
-    🧾 Fee Receipt
-  </NavLink>
-</li>
 
         <li>
           <NavLink 
@@ -121,9 +95,16 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
         </li>
 
 
+
+          
+
       </ul>
 
+        
+
     </aside>
+
+    
   );
 }
 

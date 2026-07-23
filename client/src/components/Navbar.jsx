@@ -11,7 +11,7 @@ function Navbar({ sidebarOpen, setSidebarOpen }) {
         onClick={() => {
   console.log("Menu clicked");
   setSidebarOpen(!sidebarOpen);
-  
+
 }}
 
       >
@@ -24,18 +24,39 @@ function Navbar({ sidebarOpen, setSidebarOpen }) {
       </h4>
 
 
-      <div className="ms-auto">
+      <div className="ms-auto d-flex align-items-center">
 
-        <button className="btn btn-light me-2">
-          <i className="bi bi-bell"></i>
-        </button>
+  {/* Notification */}
+  <button className="btn btn-light me-2">
+    <i className="bi bi-bell"></i>
+  </button>
 
 
-        <button className="btn btn-light">
-          <i className="bi bi-person-circle"></i>
-        </button>
+  {/* Profile */}
+  <button className="btn btn-light me-2">
+    <i className="bi bi-person-circle"></i>
+  </button>
 
-      </div>
+
+  {/* Logout */}
+  <button
+  className="btn btn-danger"
+  onClick={() => {
+
+    localStorage.removeItem("token");
+
+    window.location.href = "/login";
+
+  }}
+>
+  <i className="bi bi-box-arrow-right"></i>
+  <span className="ms-1 d-none d-md-inline">
+    Logout
+  </span>
+</button>
+
+
+</div>
 
     </nav>
   );
