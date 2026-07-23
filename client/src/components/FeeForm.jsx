@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
+import API_URL from "../config/api";
 
 
-function FeeForm({ onAddFee, editingFee, student, Students }) {
+function FeeForm({ onAddFee, editingFee, student }) {
 
-
+  const [students, setStudents] = useState([]);
   const [formData, setFormData] = useState({
 
     studentName: "",
@@ -93,6 +95,18 @@ function FeeForm({ onAddFee, editingFee, student, Students }) {
 
   };
 
+  useEffect(() => {
+  async function loadStudents() {
+    try {
+      const response = await axios.get(`${API_URL}/students`);
+      setStudents(response.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  loadStudents();
+}, []);
 
   // Calculate final amount
 
@@ -171,9 +185,6 @@ function FeeForm({ onAddFee, editingFee, student, Students }) {
 
 
   };
-
-
-
 
 
 return (
