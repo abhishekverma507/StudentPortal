@@ -13,17 +13,34 @@ function FeeAdmission() {
 
   const [student, setStudent] = useState(null);
 
+  const [students, setStudents] = useState([]);
+
   const { addFee, updateFee } = useFees();
 
   const [editingFee, setEditingFee] = useState(null);
 
-  useEffect(() => {
+useEffect(() => {
 
-    if (studentId) {
-      loadStudent();
-    }
+  loadStudents();
 
-  }, [studentId]);
+  if (studentId) {
+    loadStudent();
+  }
+
+}, [studentId]);
+
+  async function loadStudents() {
+  try {
+    const response = await axios.get(
+      `${API_URL}/students`
+    );
+
+    setStudents(response.data.data);
+
+  } catch (error) {
+    console.log(error);
+  }
+}
 
   async function loadStudent() {
 
