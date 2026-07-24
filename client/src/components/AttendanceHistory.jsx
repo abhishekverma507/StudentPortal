@@ -389,6 +389,8 @@ C
 
 </div>
 
+<div className="table-responsive">
+
 <table className="table table-bordered">
 
 <thead>
@@ -536,7 +538,7 @@ Delete
 
 </table>
 
-
+</div>
 
 </div>
 
