@@ -5,32 +5,11 @@
 @media (max-width: 991px) {
 
   .sidebar {
-    width: 220px;
+    width: 250px;
   }
 
   .content {
-    margin-left: 220px;
-    padding: 15px;
-  }
-
-}
-
-@media (max-width: 768px) {
-
-  .sidebar {
-    position: fixed;
-    left: -240px;
-    top: 0;
-    width: 240px;
-    height: 100vh;
-    z-index: 1050;
-    transition: all 0.3s ease;
-  }
-
-  
-  .content {
-    margin-left: 0 !important;
-    width: 100%;
+    margin-left: 250px;
     padding: 15px;
   }
 
@@ -73,12 +52,15 @@
     top:0;
     left:-260px !important;
 
-    width:240px;
-    height:100vh;
+    width:260px;
 
+    max-width:80%;
+    height:100vh;
+    overflow-y:auto;
+    overflow-x:hidden;
     z-index:1050;
 
-    transition:left 0.3s ease;
+    transition:left .25s ease-in-out;
 
   }
 
@@ -96,11 +78,7 @@
 
     position:fixed;
 
-    top:0;
-    left:0;
-
-    width:100%;
-    height:100%;
+    inset:0;
 
     background:rgba(0,0,0,0.5);
 
@@ -117,6 +95,16 @@
 
 }
 
+.sidebar{
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+}
+
+.sidebar .nav{
+    flex:1;
+}
+
 
 /* ===============================
    Mobile Navbar
@@ -130,6 +118,8 @@
 
   .navbar {
     padding: 10px 15px !important;
+  
+    min-height:56px;
   }
 
 }
@@ -138,15 +128,11 @@
    Mobile Responsive
 =========================== */
 
-@media (max-width: 768px) {
-
-  .sidebar{
-    display:block;
-  }
+@media (max-width:768px){
 
   .content{
     margin-left:0 !important;
-    width:100% !important;
+    width:100%;
     padding:15px;
   }
 
